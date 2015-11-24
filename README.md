@@ -16,9 +16,14 @@ use `vagrant up --provider=virtualbox ; vagrant ssh -c "/vagrant/provision.sh"`
 
 `#LOL`
 
+## Actual Times
+
+First run `143` seconds
+Second run `32` seconds
+
 ## Next Milestone
 
-- [ ] Test speed of the script. 1st and 2nd run
+- [ ] issues open
 
 ## ToDo
 
@@ -32,3 +37,5 @@ use `vagrant up --provider=virtualbox ; vagrant ssh -c "/vagrant/provision.sh"`
 - [x] Add Brett as contributor
 - [x] Vagrantfile
 - [x] Script as part of the project
+- [x] Fix [issue 2](https://github.com/kikitux/yolo-php/issues/2)
+- [x] Test speed of the script. 1st and 2nd run
