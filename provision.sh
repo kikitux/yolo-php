@@ -1,14 +1,16 @@
 #!/bin/bash
 
-export DEBIAN_FRONTEND=noninteractive
+#fix https://github.com/kikitux/yolo-php/issues/2
+mkdir -p /vagrant/public
 
+export DEBIAN_FRONTEND=noninteractive
 PACKAGES=(apache2 mysql-server php5 php5-mysql php5-dev php-pear)
 
 sudo -E apt-get update >/dev/null
 
 for i in "${PACKAGES[@]}"; do
 	if ! dpkg --get-selections | grep -q "^$i[[:space:]]*install$" >/dev/null; then
-		sudo -E apt-get install -y -q "$i" >/dev/null
+		sudo -E apt-get install -y -q --no-install-recommends "$i" >/dev/null
 	fi
 done
 
@@ -25,7 +27,6 @@ if ! grep -q 'xdebug.remote_enable=1' '/etc/php5/apache2/php.ini'; then
 		xdebug.remote_host=10.0.2.2
 		xdebug.remote_port=9000
 		xdebug.remote_handler=dbgp
-		xdebug.remote_mode=req
 		EOF
 fi
 
