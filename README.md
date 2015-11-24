@@ -19,6 +19,7 @@ use `vagrant up --provider=virtualbox ; vagrant ssh -c "/vagrant/provision.sh"`
 ## Actual Times
 
 First run `143` seconds
+
 Second run `32` seconds
 
 ## Next Milestone
@@ -28,6 +29,7 @@ Second run `32` seconds
 ## ToDo
 
 - [ ] From Slack @kikitux: add `--no-install-recommends` to `apt-get install` 
+- [ ] Find a better name for project
 - [ ] Reduce `#yolo` count
 - [ ] Make script faster on 2nd run
 - [ ] Add Travis-ci
