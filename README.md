@@ -32,3 +32,4 @@ use `vagrant up --provider=virtualbox ; vagrant ssh -c "/vagrant/provision.sh"`
 - [x] Add Brett as contributor
 - [x] Vagrantfile
 - [x] Script as part of the project
+- [x] Fix [issue 2](https://github.com/kikitux/yolo-php/issues/2)
