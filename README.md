@@ -39,3 +39,4 @@ Second run `32` seconds
 - [x] Script as part of the project
 - [x] Fix [issue 2](https://github.com/kikitux/yolo-php/issues/2)
 - [x] Test speed of the script. 1st and 2nd run
+- [x] Fix [issue 1](https://github.com/kikitux/yolo-php/issues/1)
