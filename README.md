@@ -16,10 +16,13 @@ use `vagrant up --provider=virtualbox ; vagrant ssh -c "/vagrant/provision.sh"`
 
 `#LOL`
 
-## ToDo
+## Milestones
 
 - [ ] Vagrantfile
 - [ ] Script as part of the project
+
+## ToDo
+
 - [ ] From Slack @kikitux: add `--no-install-recommends` to `apt-get install` 
 - [ ] Reduce `#yolo` count
 - [ ] Test speed of the script. 1st and 2nd run
