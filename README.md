@@ -16,7 +16,7 @@ use `vagrant up --provider=virtualbox ; vagrant ssh -c "/vagrant/provision.sh"`
 
 `#LOL`
 
-## Milestones
+## Next Milestone
 
 - [ ] Test speed of the script. 1st and 2nd run
 
@@ -25,6 +25,7 @@ use `vagrant up --provider=virtualbox ; vagrant ssh -c "/vagrant/provision.sh"`
 - [ ] From Slack @kikitux: add `--no-install-recommends` to `apt-get install` 
 - [ ] Reduce `#yolo` count
 - [ ] Make script faster on 2nd run
+- [ ] Add Travis-ci
 
 ## Changelog
 
