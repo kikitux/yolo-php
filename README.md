@@ -15,3 +15,12 @@ use `vagrant up --provider=virtualbox ; vagrant ssh -c "/vagrant/provision.sh"`
 `#yolo`
 
 `#LOL`
+
+## ToDo
+
+- Add Brett as contributor
+- Vagrantfile
+- Script as part of the project
+- Reduce `#yolo` count
+- Test speed of the script. 1st and 2nd run
+- Make script faster on 2nd run
