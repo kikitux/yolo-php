@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 #fix https://github.com/kikitux/yolo-php/issues/2
 mkdir -p /vagrant/public
@@ -19,7 +20,10 @@ if [ "${runAptInstall}" ]; then
   sudo -E apt-get -f -y -q install --no-install-recommends ${runAptInstall}
 fi
 
-if [ -n "$(find / -name 'xdebug.so' 2>/dev/null)" ]; then
+isxdebuginstalled="`find /usr/lib/php*/* -name xdebug.so`"
+isxdebuginstalledrc="${?}"
+
+if [ "${isxdebuginstalledrc}" -ne 0 ]; then
 	sudo pecl install -Z xdebug >/dev/null
 fi
 
