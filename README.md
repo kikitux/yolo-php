@@ -19,6 +19,7 @@ use `vagrant up --provider=virtualbox ; vagrant ssh -c "/vagrant/provision.sh"`
 ## Actual Times
 
 First run `143` seconds
+
 Second run `32` seconds
 
 ## Next Milestone
@@ -28,6 +29,7 @@ Second run `32` seconds
 ## ToDo
 
 - [ ] From Slack @kikitux: add `--no-install-recommends` to `apt-get install` 
+- [ ] Find a better name for project
 - [ ] Reduce `#yolo` count
 - [ ] Make script faster on 2nd run
 - [ ] Add Travis-ci
@@ -39,3 +41,4 @@ Second run `32` seconds
 - [x] Script as part of the project
 - [x] Fix [issue 2](https://github.com/kikitux/yolo-php/issues/2)
 - [x] Test speed of the script. 1st and 2nd run
+- [x] Fix [issue 1](https://github.com/kikitux/yolo-php/issues/1)
