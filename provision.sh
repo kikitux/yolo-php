@@ -6,15 +6,18 @@ mkdir -p /vagrant/public
 export DEBIAN_FRONTEND=noninteractive
 PACKAGES=(apache2 mysql-server php5 php5-mysql php5-dev php-pear)
 
-sudo -E apt-get update >/dev/null
-
-for i in "${PACKAGES[@]}"; do
-	if ! dpkg --get-selections | grep -q "^$i[[:space:]]*install$" >/dev/null; then
-		sudo -E apt-get install -y -q --no-install-recommends "$i" >/dev/null
+unset runAptInstall
+for package in "${PACKAGES[@]}"; do
+  isInstalled="`dpkg --get-selections ${package}`"
+	if [[ ! "${isInstalled}" =~ "${package}" ]]; then
+           runAptInstall="${package} ${runAptInstall}"
 	fi
 done
 
-sudo -E apt-get -f -y -q install >/dev/null
+if [ "${runAptInstall}" ]; then
+  sudo -E apt-get update
+  sudo -E apt-get -f -y -q install --no-install-recommends ${runAptInstall}
+fi
 
 if [ -n "$(find / -name 'xdebug.so' 2>/dev/null)" ]; then
 	sudo pecl install -Z xdebug >/dev/null
