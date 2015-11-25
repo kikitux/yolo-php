@@ -25,11 +25,15 @@ isxdebuginstalledrc="${?}"
 
 if [ "${isxdebuginstalledrc}" -ne 0 ]; then
 	sudo pecl install -Z xdebug >/dev/null
+        isxdebuginstalled="`find /usr/lib/php*/* -name xdebug.so`"
 fi
 
-if ! grep -q 'xdebug.remote_enable=1' '/etc/php5/apache2/php.ini'; then
+isxdebugremote_enabled="`grep -q 'xdebug.remote_enable=1' '/etc/php5/apache2/php.ini'`"
+isxdebugremote_enabledrc="${?}"
+
+if [ "${isxdebugremote_enabledrc}" -ne 0 ]; then
 	sudo tee -a '/etc/php5/apache2/php.ini' >/dev/null <<-EOF
-		zend_extension="$(find / -name 'xdebug.so' 2>/dev/null)"
+		zend_extension="${isxdebuginstalled}"
 		xdebug.remote_enable=1
 		xdebug.remote_host=10.0.2.2
 		xdebug.remote_port=9000
@@ -37,7 +41,10 @@ if ! grep -q 'xdebug.remote_enable=1' '/etc/php5/apache2/php.ini'; then
 		EOF
 fi
 
-if ! grep -q '<Directory /vagrant/public/>' '/etc/apache2/sites-enabled/000-default.conf'; then
+isvagrantpubliciset="`grep -q '<Directory /vagrant/public/>' '/etc/apache2/sites-enabled/000-default.conf'`"
+isvagrantpublicisetrc="${?}"
+
+if [ "${isvagrantpublicisetrc}" -ne 0 ]; then
 	sudo tee '/etc/apache2/sites-enabled/000-default.conf' >/dev/null <<-EOF
 		<Directory /vagrant/public/>
 		    Options Indexes FollowSymLinks
@@ -50,7 +57,6 @@ if ! grep -q '<Directory /vagrant/public/>' '/etc/apache2/sites-enabled/000-defa
 		    CustomLog \${APACHE_LOG_DIR}/access.log combined
 		</VirtualHost>
 		EOF
+  sudo a2enmod rewrite >/dev/null
+  sudo service apache2 restart >/dev/null
 fi
-
-sudo a2enmod rewrite >/dev/null
-sudo service apache2 restart >/dev/null
