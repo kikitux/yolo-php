@@ -6,7 +6,7 @@
 
 ## Actual Times
 
-First run 93, down from `143` seconds
+First run `93`, down from `143` seconds
 
 Second run `4` seconds, down from `32` seconds
 
