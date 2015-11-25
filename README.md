@@ -43,3 +43,4 @@ Second run `32` seconds
 - [x] Test speed of the script. 1st and 2nd run
 - [x] Fix [issue 1](https://github.com/kikitux/yolo-php/issues/1)
 - [x] Refactor [apt logic](https://github.com/kikitux/yolo-php/commit/10a6e043eb468ba0cb5a81a835112f35ad5c77a5)
+- [x] Fix [issue 3](https://github.com/kikitux/yolo-php/issues/3)
