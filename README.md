@@ -1,26 +1,14 @@
-# yolo-php
+# trusty 32bit with xdebug and php installed
 
-##yolo start
+##start
 
-Download the script from here `https://gist.githubusercontent.com/developerbmw/9cc3a4aeea606a511a61/raw/be2e5a6947e11a2f88218262d8aba9fa23ac6c11/provision.sh`
-
-then
-
-use `vagrant init -m ubuntu/trusty32` to create a vagrantfile, since having one in the project is too mainstream
-
-then
-
-use `vagrant up --provider=virtualbox ; vagrant ssh -c "/vagrant/provision.sh"`
-
-`#yolo`
-
-`#LOL`
+`vagrant up`
 
 ## Actual Times
 
-First run `143` seconds
+First run 93, down from `143` seconds
 
-Second run `32` seconds
+Second run `4` seconds, down from `32` seconds
 
 ## Next Milestone
 
@@ -28,10 +16,8 @@ Second run `32` seconds
 
 ## ToDo
 
-- [ ] From Slack @kikitux: add `--no-install-recommends` to `apt-get install` 
 - [ ] Find a better name for project
-- [ ] Reduce `#yolo` count
-- [ ] Make script faster on 2nd run
+- [ ] Create own base box (will speed up first run)
 - [ ] Add Travis-ci
 
 ## Changelog
@@ -44,3 +30,6 @@ Second run `32` seconds
 - [x] Fix [issue 1](https://github.com/kikitux/yolo-php/issues/1)
 - [x] Refactor [apt logic](https://github.com/kikitux/yolo-php/commit/10a6e043eb468ba0cb5a81a835112f35ad5c77a5)
 - [x] Fix [issue 3](https://github.com/kikitux/yolo-php/issues/3)
+- [x] From Slack @kikitux: add `--no-install-recommends` to `apt-get install` 
+- [x] Reduce `#yolo` count
+- [x] Make script faster on 2nd run
